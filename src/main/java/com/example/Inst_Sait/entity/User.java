@@ -4,6 +4,7 @@ import com.example.Inst_Sait.entity.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ import java.util.*;
 @Data
 @Entity
 
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
@@ -45,13 +46,45 @@ public class User {
 
     public User ()
     {
-
     }
 
+    public User(Long id, String username, String email, String password, Collection <? extends GrantedAuthority> authorities)
+    {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.authorities = authorities;
+    }
+
+    @Override
+    public String getPassword()
+    {
+        return password;
+    }
     @PrePersist 
     protected void onCreate ()
     {
         this.createdDate = LocalDateTime.now();
     }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
 }

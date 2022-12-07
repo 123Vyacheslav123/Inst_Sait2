@@ -1,5 +1,6 @@
 package com.example.Inst_Sait.services;
 
+
 import com.example.Inst_Sait.entity.User;
 import com.example.Inst_Sait.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +25,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
 
-
-    @Override
-    public UserDetails loadUserByUsername(String username) {
-        User user = userRepository.findUserByEmail(username).orElseThrow(()-> new UsernameNotFoundException("Username not found with username" + username));
-
-        return build(user);
-    }
-
     public User loadUserById (Long id )
     {
         return userRepository.findUserById(id).orElse(null);
@@ -45,5 +38,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return new User (user.getId(), user.getUsername(), user.getEmail(), user.getPassword(), authorities);
 
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) {
+        User user = userRepository.findUserByEmail(username).orElseThrow(()-> new UsernameNotFoundException("Username not found with username" + username));
+
+        return build (user);
     }
 }
