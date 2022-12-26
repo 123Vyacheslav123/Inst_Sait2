@@ -73,7 +73,4 @@ public ResponseEntity<Object> registerUser (@Valid @RequestBody SignupRequest si
     return ResponseEntity.ok(new MessageResponse("User regestered successfully"));
     }
 
-
-
-
 }
