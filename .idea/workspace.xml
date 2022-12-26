@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9587f69-a810-4139-9799-43a0dd8b5e11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/JWTAutenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/UserService.java" afterDir="false" />
-    </list>
+    <list default="true" id="e9587f69-a810-4139-9799-43a0dd8b5e11" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +127,7 @@
       <workItem from="1672078562177" duration="3263000" />
       <workItem from="1672082304392" duration="107000" />
       <workItem from="1672082695669" duration="2369000" />
-      <workItem from="1672085520424" duration="1142000" />
+      <workItem from="1672085520424" duration="1575000" />
     </task>
     <task id="LOCAL-00001" summary="our project version 2">
       <created>1670397329259</created>
@@ -164,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672080137861</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="далее">
+      <created>1672087007576</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672087007576</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +178,8 @@
     <MESSAGE value="our project add last files" />
     <MESSAGE value="Изменили Юзера - удалили ненужного и исправили ошибки в Кастом Юзер Дитейлс" />
     <MESSAGE value="Все восстановили, протестировали POstMan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Все восстановили, протестировали POstMan" />
+    <MESSAGE value="далее" />
+    <option name="LAST_COMMIT_MESSAGE" value="далее" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
