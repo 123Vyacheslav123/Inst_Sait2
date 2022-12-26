@@ -21,6 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
         (
                 securedEnabled = true,
                 jsr250Enabled = true,
+               // prePostEnabled = true,
                 proxyTargetClass = true
         )
 

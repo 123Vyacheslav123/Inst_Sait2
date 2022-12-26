@@ -1,16 +1,21 @@
 package com.example.Inst_Sait.services;
 
+import com.example.Inst_Sait.dto.UserDTO;
 import com.example.Inst_Sait.entity.User;
 import com.example.Inst_Sait.entity.enums.ERole;
 import com.example.Inst_Sait.exceptions.UserExistException;
 import com.example.Inst_Sait.payload.request.SignupRequest;
 import com.example.Inst_Sait.repository.UserRepository;
+import com.example.Inst_Sait.dto.UserDTO;
 import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.security.Principal;
 
 @Service
 public class UserService
@@ -46,5 +51,29 @@ public class UserService
             LOG.error("Error during registartion. {}", e.getMessage());
             throw new UserExistException("The user " + user.getUsername() + " alredy exist. Please check credentials");
         }
+    }
+
+    public User updateUser(UserDTO userDTO, Principal principal) {
+        User user = getUserByPrincipal(principal);
+        user.setName(userDTO.getFirstname());
+        user.setLastname(userDTO.getLastname());
+        user.setBio(userDTO.getBio());
+
+        return userRepository.save(user);
+    }
+
+    public User getCurrentUser(Principal principal) {
+        return getUserByPrincipal(principal);
+    }
+
+    private User getUserByPrincipal(Principal principal) {
+        String username = principal.getName();
+        return userRepository.findUserByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username " + username));
+
+    }
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 }
