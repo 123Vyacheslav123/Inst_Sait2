@@ -1,7 +1,7 @@
 package com.example.Inst_Sait.services;
 
 import com.example.Inst_Sait.dto.PostDTO;
-import com.example.Inst_Sait.entity.ImegModel;
+import com.example.Inst_Sait.entity.ImageModel;
 import com.example.Inst_Sait.entity.Post;
 import com.example.Inst_Sait.entity.User;
 import com.example.Inst_Sait.exceptions.PostNotFoundException;
@@ -81,7 +81,7 @@ public class PostService {
 
     public void deletePost(Long postId, Principal principal) {
         Post post = getPostById(postId, principal);
-        Optional<ImegModel> imageModel = imageRepository.findByPostId(post.getId());
+        Optional<ImageModel> imageModel = imageRepository.findByPostId(post.getId());
         postRepository.delete(post);
         imageModel.ifPresent(imageRepository::delete);
     }

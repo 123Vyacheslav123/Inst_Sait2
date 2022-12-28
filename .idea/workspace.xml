@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9587f69-a810-4139-9799-43a0dd8b5e11" name="Default Changelist" comment="" />
+    <list default="true" id="e9587f69-a810-4139-9799-43a0dd8b5e11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/annotations/PasswordMatches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/annotations/PasswordMatches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/annotations/ValidEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/annotations/ValidEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/ImegModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/enums/ERole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/entity/enums/ERole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/exceptions/UserExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/exceptions/UserExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/request/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/request/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/response/InvalidLoginResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/response/JWTTokenSuccessResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/payload/response/MessageResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/JWTAutenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/JWTAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/JWTAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/JWTTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/JWTTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/SecurityConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/security/SecurityConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/validations/EmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/validations/EmailValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/validations/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/validations/PasswordMatchesValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/validations/ResponseErrorValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/validations/ResponseErrorValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Inst_Sait/web/AuthController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +158,8 @@
       <workItem from="1672078562177" duration="3263000" />
       <workItem from="1672082304392" duration="107000" />
       <workItem from="1672082695669" duration="2369000" />
-      <workItem from="1672085520424" duration="1575000" />
+      <workItem from="1672085520424" duration="1725000" />
+      <workItem from="1672210731032" duration="7030000" />
     </task>
     <task id="LOCAL-00001" summary="our project version 2">
       <created>1670397329259</created>
@@ -164,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672087007576</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="далее 2">
+      <created>1672087144393</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672087144393</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +218,8 @@
     <MESSAGE value="Изменили Юзера - удалили ненужного и исправили ошибки в Кастом Юзер Дитейлс" />
     <MESSAGE value="Все восстановили, протестировали POstMan" />
     <MESSAGE value="далее" />
-    <option name="LAST_COMMIT_MESSAGE" value="далее" />
+    <MESSAGE value="далее 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="далее 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

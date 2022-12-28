@@ -1,11 +1,9 @@
 package com.example.Inst_Sait.web;
 
-
-import ch.qos.logback.classic.servlet.LogbackServletContainerInitializer;
+import com.example.Inst_Sait.payload.reponse.JWTTokenSuccessResponse;
+import com.example.Inst_Sait.payload.reponse.MessageResponse;
 import com.example.Inst_Sait.payload.request.LoginRequest;
 import com.example.Inst_Sait.payload.request.SignupRequest;
-import com.example.Inst_Sait.payload.response.JWTTokenSuccessResponse;
-import com.example.Inst_Sait.payload.response.MessageResponse;
 import com.example.Inst_Sait.security.JWTTokenProvider;
 import com.example.Inst_Sait.security.SecurityConstants;
 import com.example.Inst_Sait.services.UserService;
@@ -17,7 +15,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.util.ObjectUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -27,9 +24,7 @@ import javax.validation.Valid;
 @CrossOrigin
 @RestController
 @RequestMapping("/api/auth")
-@PreAuthorize("premitAll()")
-
-
+@PreAuthorize("permitAll()")
 public class AuthController {
 
     @Autowired
@@ -41,36 +36,30 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-
-    @PostMapping( "/signin")
-    public ResponseEntity<Object> authenticateUser (@Valid @RequestBody LoginRequest loginRequest,
-                                                    BindingResult bindingResult)
-    {
+    @PostMapping("/signin")
+    public ResponseEntity<Object> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, BindingResult bindingResult) {
         ResponseEntity<Object> errors = responseErrorValidation.mapValidationService(bindingResult);
-
-        if(!ObjectUtils.isEmpty(errors)) return errors;
+        if (!ObjectUtils.isEmpty(errors)) return errors;
 
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginRequest.getUsername(),
                 loginRequest.getPassword()
         ));
+
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = SecurityConstants.TOKEN_PREFIX + jwtTokenProvider.generateToken(authentication);
+
         return ResponseEntity.ok(new JWTTokenSuccessResponse(true, jwt));
     }
 
-    //api/auth/signup
 
     @PostMapping("/signup")
-public ResponseEntity<Object> registerUser (@Valid @RequestBody SignupRequest signupRequest,
-                                            BindingResult bindingResult)
-    {
-    ResponseEntity<Object> errors = responseErrorValidation.mapValidationService(bindingResult);
+    public ResponseEntity<Object> registerUser(@Valid @RequestBody SignupRequest signupRequest, BindingResult bindingResult) {
+        ResponseEntity<Object> errors = responseErrorValidation.mapValidationService(bindingResult);
+        if (!ObjectUtils.isEmpty(errors)) return errors;
 
-    if(!ObjectUtils.isEmpty(errors)) return errors;
-
-    userService.createUser(signupRequest);
-    return ResponseEntity.ok(new MessageResponse("User regestered successfully"));
+        userService.createUser(signupRequest);
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 
 }

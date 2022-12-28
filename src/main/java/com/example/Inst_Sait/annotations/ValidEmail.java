@@ -1,6 +1,5 @@
 package com.example.Inst_Sait.annotations;
 
-
 import com.example.Inst_Sait.validations.EmailValidator;
 
 import javax.validation.Constraint;
@@ -11,10 +10,11 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = EmailValidator.class)
 @Documented
-public @interface ValidEmail
-{
-    String message () default "Invalid Email";
-    Class <?> [] groups() default {};
+public @interface ValidEmail {
+    String message() default "Invalid Email";
 
-    Class <? extends Payload>[] payload() default {};
+    Class<?>[] groups() default{};
+
+    Class<? extends Payload>[] payload() default {};
+
 }

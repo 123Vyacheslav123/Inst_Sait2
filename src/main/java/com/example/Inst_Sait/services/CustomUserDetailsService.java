@@ -1,6 +1,5 @@
 package com.example.Inst_Sait.services;
 
-
 import com.example.Inst_Sait.entity.User;
 import com.example.Inst_Sait.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,26 +23,33 @@ public class CustomUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) {
+        User user = userRepository.findUserByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found with username: " + username));
 
-    public User loadUserById (Long id )
-    {
+        return build(user);
+    }
+
+    public User loadUserById(Long id) {
         return userRepository.findUserById(id).orElse(null);
     }
 
 
-    public static User build (User user)
-    {
-        List<GrantedAuthority> authorities = user.getRole().stream().map(role -> new SimpleGrantedAuthority(role.name()))
+    public static User build(User user) {
+        List<GrantedAuthority> authorities = user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.name()))
                 .collect(Collectors.toList());
 
-        return new User (user.getId(), user.getUsername(), user.getEmail(), user.getPassword(), authorities);
-
+        return new User(
+                user.getId(),
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
+                authorities);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) {
-        User user = userRepository.findUserByEmail(username).orElseThrow(()-> new UsernameNotFoundException("Username not found with username" + username));
 
-        return build (user);
-    }
+
+
 }

@@ -18,48 +18,43 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
 
-
-public class JWTAutenticationFilter extends OncePerRequestFilter {
-
-    public static final Logger LOG = LoggerFactory.getLogger(JWTAutenticationFilter.class);
+public class JWTAuthenticationFilter extends OncePerRequestFilter {
+    public static final Logger LOG = LoggerFactory.getLogger(JWTAuthenticationFilter.class);
 
     @Autowired
     private JWTTokenProvider jwtTokenProvider;
-
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-       try {
+        try {
             String jwt = getJWTFromRequest(httpServletRequest);
-
             if (StringUtils.hasText(jwt) && jwtTokenProvider.validateToken(jwt)) {
                 Long userId = jwtTokenProvider.getUserIdFromToken(jwt);
                 User userDetails = customUserDetailsService.loadUserById(userId);
 
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, Collections.emptyList());
+                        userDetails, null, Collections.emptyList()
+                );
 
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));;
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
-        } catch (Exception ex)
-       {
-           LOG.error("Colud not set user autentication");
-       }
-
-       filterChain.doFilter(httpServletRequest,httpServletResponse);
-    }
-
-    private String getJWTFromRequest(HttpServletRequest request)
-    {
-        String bearToken = request.getHeader(SecurityConstants.HEADER_STRING);
-
-        if (StringUtils.hasText(bearToken) && bearToken.startsWith(SecurityConstants.TOKEN_PREFIX))
-        {
-            return bearToken.split(" ")[1];
+        } catch (Exception ex) {
+            LOG.error("Could not set user authentication");
         }
-        return null;
+
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
+
+    private String getJWTFromRequest(HttpServletRequest request) {
+        String bearToken = request.getHeader(SecurityConstants.HEADER_STRING);
+       if (StringUtils.hasText(bearToken) && bearToken.startsWith(SecurityConstants.TOKEN_PREFIX)) {
+           return bearToken.split(" ")[1];
+       }
+       return null;
+    }
+
+
 }

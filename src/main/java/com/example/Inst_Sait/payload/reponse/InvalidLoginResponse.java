@@ -1,14 +1,17 @@
-package com.example.Inst_Sait.payload.response;
+package com.example.Inst_Sait.payload.reponse;
 
+import lombok.Getter;
+
+@Getter
 public class InvalidLoginResponse {
 
     private String username;
     private String password;
 
-    public InvalidLoginResponse ()
-    {
+    public InvalidLoginResponse() {
         this.username = "Invalid Username";
         this.password = "Invalid Password";
-
     }
+
+
 }

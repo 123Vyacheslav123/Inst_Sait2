@@ -5,11 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
+@Data
+public class Comment {
 
-public class Comment
-{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,13 +18,16 @@ public class Comment
     private String username;
     @Column(nullable = false)
     private Long userId;
-    @Column (columnDefinition = "text", nullable = false)
+    @Column(columnDefinition = "text", nullable = false)
     private String message;
-    @Column (updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdDate;
 
+    public Comment() {
+    }
+
     @PrePersist
-    protected void onCreate ()
+    protected void onCreate()
     {
         this.createdDate = LocalDateTime.now();
     }

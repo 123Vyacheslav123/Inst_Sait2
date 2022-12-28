@@ -1,7 +1,5 @@
 package com.example.Inst_Sait.annotations;
 
-
-
 import com.example.Inst_Sait.validations.PasswordMatchesValidator;
 
 import javax.validation.Constraint;
@@ -12,11 +10,10 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PasswordMatchesValidator.class)
 @Documented
+public @interface PasswordMatches {
+    String message() default "Password do not match";
 
-public @interface PasswordMatches
-{
-    String message () default "Password do not match";
-    Class <?> [] groups() default {};
+    Class<?>[] groups() default{};
 
-    Class <? extends Payload>[] payload() default {};
+    Class<? extends Payload>[] payload() default {};
 }
